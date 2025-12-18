@@ -21,12 +21,7 @@
     color:var(--text);
   }
   .container{max-width:var(--max-width);margin:20px auto;padding:18px}
-  .logo{
-    text-align:center;
-    font-size:36px;
-    font-weight:900;
-    letter-spacing:3px;
-  }
+  .logo{text-align:center;font-size:34px;font-weight:900;letter-spacing:2px}
 
   .card{background:var(--card-bg);padding:18px;border-radius:12px;margin-top:12px}
   input{padding:10px;border:none;border-radius:8px;width:100%}
@@ -39,21 +34,13 @@
   .result{display:none;margin-top:12px;padding:14px;border-radius:10px;background:rgba(0,0,0,0.26)}
   .line{opacity:0;transform:translateY(6px);transition:.3s;margin:6px 0}
   .line.show{opacity:1;transform:translateY(0)}
-
-  .footer{
-    margin-top:12px;
-    font-size:13px;
-    opacity:0.95;
-  }
-  .footer a{color:#fff;text-decoration:underline}
 </style>
 </head>
 
 <body>
 <div class="container">
 
-  <!-- Company Logo -->
-  <div class="logo">ARAMXEX</div>
+  <div class="logo">Aramex</div>
 
   <div class="card">
     <h3>Enter Tracking Code</h3>
@@ -67,13 +54,6 @@
     <div id="result" class="result">
       <h3>Tracking Details</h3>
       <div id="detailLines"></div>
-
-      <div class="footer">
-        For more information contact us at:<br>
-        <a href="https://www.globalcustomercare.com" target="_blank">
-          www.globalcustomercare.com
-        </a>
-      </div>
     </div>
   </div>
 
@@ -82,23 +62,18 @@
 <script>
 const CODE = "XX-UK92502";
 
-/* Final replaced shipment details */
 const LINES = [
   "<b>Status:</b> Not yet cleared",
-  "<b>Tracking Number:</b> XX-UK92502",
   "<b>Current Location:</b> South Africa",
   "<b>Final Destination:</b> Botswana",
-
-  "<hr>",
-
-  "<b>Sender Name:</b> Bien Slander",
+  "<b>Weight:</b> 14.2 kg",
+  "<b>Quantity:</b> 1",
+  "<b>Sender:</b> Bien Slander",
   "<b>Sender Address:</b> Sana'a, Yemen",
-
-  "<hr>",
-
-  "<b>Receiver Name:</b> Mbega Poloko",
+  "<b>Receiver:</b> Mbega Poloko",
   "<b>Receiver Phone:</b> +267 75478945 / +267 74428839",
-  "<b>Receiver Address:</b> P.O. Box 857, Letlhakane, Botswana"
+  "<b>Receiver Address:</b> P.O. Box 857, Letlhakane, Botswana",
+  "<b>Contact:</b> aramexglobaldelivery4@gmail.com"
 ];
 
 function trackNow(){
@@ -132,8 +107,7 @@ function trackNow(){
 
     } else {
       result.style.display="block";
-      detailDiv.innerHTML =
-        "<div class='line show'>❌ Invalid Tracking Number</div>";
+      detailDiv.innerHTML = "<div class='line show'>❌ Invalid Tracking Number</div>";
     }
   },1500);
 }
